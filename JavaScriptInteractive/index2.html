@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beginner Counter</title>
+	<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+	<h1>Welcome, it's just for fun. Lets automate Count</h1>
+
+    <h1 id="display">1</h1>
+    <button onclick="startCounting()">Slow</button>
+
+    <script>
+        // We set the starting number outside the function
+        let count = 1;
+
+        function startCounting() {
+            // 1. Update the h1 text
+            document.getElementById("display").innerHTML = count;
+
+            // 2. Check if we are still under 100
+            if (count < 100) {
+                count++; // Increase count by 1
+
+                /* 3. This is the magic part: 
+                   It waits 50 milliseconds, then runs this same function again.
+                   This creates a visual "loop" you can actually see! */
+                setTimeout(startCounting, 50);
+            }
+        }
+
+
+    </script>
+
+    <h1 id="id2">1</h1>
+    <button onclick="startCounting2()">Fast</button>
+    <script>
+	    let x = 1;
+	    function startCounting2(){
+		    if(x<100){
+			    x++;
+			    document.getElementById("id2").innerHTML = x;
+			    setTimeout(startCounting2, 10);
+		    }
+	    }
+		    
+    </script>
+		    <h1 id="id3">1</h1>
+		    <button onclick="startCounting3()">VeryFast!MayCrash</button>
+		    <script>
+			    let z = 1;
+			    function startCounting3(){
+				    if(z<999999999999999){
+					    z++;
+					    document.getElementById("id3").innerHTML = z;
+				    }
+			    }
+		    </script>
+				    <footer>
+					    <p>Thanks dear, u r the real one. Thanks for wasting your precious time..</p>
+				    </footer>
+
+</body>
+</html>

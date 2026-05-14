@@ -1,0 +1,72 @@
+html{
+    scroll-behavior: smooth;
+
+}
+body{
+    margin-top: 10%;
+
+    background-color:gray;
+
+}
+img{
+    border-radius: 50%;
+    height:  30%;
+    width: 30%;
+   display: block;
+   margin: 0 auto;
+}
+
+h1{
+    text-align: center;
+    color: white;
+}
+h2{
+text-align: center;
+color: yellow;
+}
+p{
+    text-align: center;
+    color: white;
+}
+
+.cards{
+    text-decoration: none;
+    text-align: center;
+    font-size: 20px;
+    margin: 50px;
+    
+ 
+
+
+    
+
+    
+
+
+
+}
+
+.github,.mentor, .linkedin, .twitter, .instagram{ 
+    text-decoration: none;
+    border: solid 2px transparent;
+    border-radius: 5px;
+    display: block;
+    height: 100%;
+    width: 100%;
+    letter-spacing: 1px;
+    overflow: hidden;
+    transition: .2s;
+  background-color: white; 
+}
+
+
+
+
+a:hover{
+    background-color: gray;
+
+}
+a:active{
+    background-color: green;
+    transition: .1s;
+}

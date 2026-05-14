@@ -1,0 +1,30 @@
+Chrome_DevTools
+Linux
+Terminal_Commands
+Vim
+HTML
+CSS
+JavaScript
+TypeScript
+TailwindCSS
+JavasScript testing with jest
+vite
+react
+farmer
+node.js express.js
+api
+PostgreSQL
+Prisma
+JSON
+WebSockets socket.io
+next.js appwrite
+b2b app
+Astro
+firebase
+git
+netlify
+docur
+secure api
+api autumationai
+bootstrap
+figma

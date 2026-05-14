@@ -1,0 +1,55 @@
+** start of script.js **
+
+const questions = [
+  {
+    category: "Science",
+    question: "What is the chemical symbol for water?",
+    choices: ["H2O", "O2", "CO2"],
+    answer: "H2O"
+  },
+  {
+    category: "History",
+    question: "Who was the first President of the United States?",
+    choices: ["Abraham Lincoln", "George Washington", "Thomas Jefferson"],
+    answer: "George Washington"
+  },
+  {
+    category: "Geography",
+    question: "Which is the largest continent?",
+    choices: ["Africa", "Asia", "Europe"],
+    answer: "Asia"
+  },
+  {
+    category: "Technology",
+    question: "What does 'CPU' stand for?",
+    choices: ["Central Processing Unit", "Computer Personal Unit", "Central Peripheral Unit"],
+    answer: "Central Processing Unit"
+  },
+  {
+    category: "Literature",
+    question: "Who wrote 'Romeo and Juliet'?",
+    choices: ["Charles Dickens", "William Shakespeare", "Mark Twain"],
+    answer: "William Shakespeare"
+  }
+];
+
+function getRandomQuestion(questionsArray) {
+  const randomIndex = Math.floor(Math.random() * questionsArray.length);
+  return questionsArray[randomIndex];
+}
+
+function getRandomComputerChoice(choices) {
+  const randomIndex = Math.floor(Math.random() * choices.length);
+  return choices[randomIndex];
+}
+
+function getResults(questionObject, computerChoice) {
+  if (computerChoice === questionObject.answer) {
+    return "The computer's choice is correct!";
+  } else {
+    return "The computer's choice is wrong. The correct answer is: " + questionObject.answer;
+  }
+}
+
+** end of script.js **
+

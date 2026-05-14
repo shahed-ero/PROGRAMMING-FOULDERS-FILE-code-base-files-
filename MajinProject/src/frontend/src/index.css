@@ -1,0 +1,386 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.375rem;
+    --background: 0.12 0 0;
+    --foreground: 0.95 0 0;
+    --card: 0.16 0 0;
+    --card-foreground: 0.95 0 0;
+    --popover: 0.16 0 0;
+    --popover-foreground: 0.95 0 0;
+    --primary: 0.85 0.13 196;
+    --primary-foreground: 0.12 0 0;
+    --secondary: 0.2 0 0;
+    --secondary-foreground: 0.95 0 0;
+    --muted: 0.2 0 0;
+    --muted-foreground: 0.6 0 0;
+    --accent: 0.85 0.13 196;
+    --accent-foreground: 0.12 0 0;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.25 0 0;
+    --input: 0.25 0 0;
+    --ring: 0.85 0.13 196;
+    --aqua: 0.85 0.13 196;
+    --chart-1: 0.85 0.13 196;
+    --chart-2: 0.75 0.1 196;
+    --chart-3: 0.65 0.08 196;
+    --chart-4: 0.55 0.06 196;
+    --chart-5: 0.45 0.04 196;
+    --sidebar: 0.14 0 0;
+    --sidebar-foreground: 0.95 0 0;
+    --sidebar-primary: 0.85 0.13 196;
+    --sidebar-primary-foreground: 0.12 0 0;
+    --sidebar-accent: 0.2 0 0;
+    --sidebar-accent-foreground: 0.95 0 0;
+    --sidebar-border: 0.25 0 0;
+    --sidebar-ring: 0.85 0.13 196;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Space Grotesk", sans-serif;
+    cursor: none;
+  }
+
+  a,
+  button,
+  [data-ocid],
+  input,
+  textarea,
+  select {
+    cursor: none;
+  }
+}
+
+/* ─── Scrollbar ─────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: oklch(0.12 0 0);
+  animation: scrollbar-track-glow 3s ease-in-out infinite;
+}
+::-webkit-scrollbar-thumb {
+  background: oklch(0.85 0.13 196 / 0.6);
+  border-radius: 3px;
+  transition: background 0.3s;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: oklch(0.85 0.13 196);
+  box-shadow: 0 0 8px oklch(0.85 0.13 196 / 0.8);
+}
+
+@layer utilities {
+  .font-orbitron {
+    font-family: "Orbitron", monospace;
+  }
+
+  .font-space {
+    font-family: "Space Grotesk", sans-serif;
+  }
+
+  .text-aqua {
+    color: oklch(var(--aqua));
+  }
+
+  .border-aqua {
+    border-color: oklch(var(--aqua));
+  }
+
+  .bg-aqua {
+    background-color: oklch(var(--aqua));
+  }
+
+  .glow-aqua {
+    box-shadow: 0 0 20px oklch(var(--aqua) / 0.4), 0 0 40px
+      oklch(var(--aqua) / 0.2);
+  }
+
+  .glow-aqua-text {
+    text-shadow: 0 0 20px oklch(var(--aqua) / 0.8), 0 0 40px
+      oklch(var(--aqua) / 0.4);
+  }
+
+  .scanline-overlay {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .scanline-overlay::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      oklch(var(--aqua) / 0.03) 2px,
+      oklch(var(--aqua) / 0.03) 4px
+    );
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .corner-brackets {
+    position: relative;
+  }
+
+  .corner-brackets::before,
+  .corner-brackets::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-color: oklch(var(--aqua));
+    border-style: solid;
+    z-index: 10;
+  }
+
+  .corner-brackets::before {
+    top: -4px;
+    left: -4px;
+    border-width: 3px 0 0 3px;
+  }
+
+  .corner-brackets::after {
+    bottom: -4px;
+    right: -4px;
+    border-width: 0 3px 3px 0;
+  }
+
+  .bg-grid-pattern {
+    background-image: linear-gradient(
+        oklch(var(--aqua) / 0.05) 1px,
+        transparent 1px
+      ), linear-gradient(90deg, oklch(var(--aqua) / 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* Nav link sliding underline */
+  .nav-link {
+    position: relative;
+  }
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: oklch(var(--aqua));
+    transition: width 0.3s ease;
+    border-radius: 1px;
+  }
+  .nav-link:hover::after {
+    width: 100%;
+  }
+}
+
+/* ─── Floating Particles ─────────────────────────────────────── */
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: oklch(0.85 0.13 196 / 0.6);
+  box-shadow: 0 0 6px oklch(0.85 0.13 196 / 0.4);
+  animation: float-up linear infinite;
+}
+
+@keyframes float-up {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(-120px) scale(0.5);
+    opacity: 0;
+  }
+}
+
+/* ─── Hero Glow Pulse ────────────────────────────────────────── */
+.hero-glow {
+  animation: glow-pulse 4s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    opacity: 0.08;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.18;
+    transform: scale(1.1);
+  }
+}
+
+/* ─── Hero Button Pulse Ring ─────────────────────────────────── */
+.hero-pulse-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.hero-btn-primary:hover .hero-pulse-ring,
+.hero-btn-secondary:hover .hero-pulse-ring {
+  animation: pulse-ring-out 0.6s ease forwards;
+  border: 2px solid oklch(0.85 0.13 196 / 0.8);
+}
+
+@keyframes pulse-ring-out {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.18);
+    opacity: 0;
+  }
+}
+
+/* ─── Project Card Shimmer & Border Cycle ────────────────────── */
+.project-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-shimmer {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    oklch(0.88 0.18 85 / 0.08) 50%,
+    transparent 60%
+  );
+  transition: none;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.project-card:hover .project-shimmer {
+  animation: shimmer-slide 0.7s ease forwards;
+}
+
+@keyframes shimmer-slide {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 150%;
+  }
+}
+
+/* Border color cycle: gold → aqua → gold */
+.project-border-cycle {
+  border-color: oklch(0.78 0.18 85 / 0.5);
+  transition: border-color 0.3s;
+}
+
+.project-border-cycle:hover {
+  animation: border-gold-aqua 1.4s ease-in-out infinite;
+}
+
+@keyframes border-gold-aqua {
+  0%,
+  100% {
+    border-color: oklch(0.88 0.18 85 / 0.8);
+  }
+  50% {
+    border-color: oklch(0.85 0.13 196 / 0.9);
+  }
+}
+
+/* ─── Game Card Scanline Flicker ─────────────────────────────── */
+.game-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.game-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    oklch(0.85 0.13 196 / 0.04) 3px,
+    oklch(0.85 0.13 196 / 0.04) 6px
+  );
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.game-card:hover::before {
+  opacity: 1;
+  animation: scanline-flicker 0.12s step-end infinite;
+}
+
+@keyframes scanline-flicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* ─── Skill Bar Row Pulse ────────────────────────────────────── */
+.skill-bar-row:hover .skill-bar-fill {
+  filter: brightness(1.35);
+  transition: filter 0.25s ease;
+}
+
+/* ─── Contact Card Shimmer Sweep ─────────────────────────────── */
+.contact-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-shimmer {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    105deg,
+    transparent 30%,
+    oklch(0.85 0.13 196 / 0.07) 50%,
+    transparent 70%
+  );
+  z-index: 0;
+  pointer-events: none;
+  transition: none;
+}
+
+.contact-card:hover .contact-shimmer {
+  animation: shimmer-slide 0.65s ease forwards;
+}

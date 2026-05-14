@@ -1,0 +1,107 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+/* 
+    Created on : Jul 27, 2023, 12:04:01 PM
+    Author     : vaska
+*/
+
+@import url('https://fonts.maateen.me/kalpurush/font.css');
+*{  padding: 0px;
+    margin:0px;
+    box-sizing: border-box;
+    font-size: 12px;    
+}
+
+.main{display:grid;
+     grid-template-rows:600px 400px 400px   40px  ;
+     grid-template-columns:1fr 1fr 1fr 1fr;
+     grid-gap:0px;
+     gird-auto-rows:400px;     
+     padding: 0px;
+     margin:0px;
+  }
+  .slider{grid-row:1/2;grid-column:1/4;background-color:black ; border-top: 30px solid; border-bottom: 30px solid;overflow: hidden; padding:0px;border-image-source:  url("../Images/border1.jpg") ;border-image-slice:100;display: flex;justify-content: center;align-items:  center;} 
+  .banner{grid-row:1/2;grid-column:4/5;display:flex;justify-content: center;align-items: center;background-color: whitesmoke;margin: 0;padding:0;}
+  .aboutus{grid-row:2/3;grid-column:1/3;background-color:white;color:black;padding:10px;border: 0px solid gray;font-family: 'Kalpurush', sans-serif;display: flex;justify-content: center;align-items: center;}
+         .aboutus .r{min-height: 350px;text-align: justify;padding:10px;font-size:1.4rem;border:1px solid lightgray;border-radius: 10px;font-family: 'Kalpurush', sans-serif;color:maroon;line-height: 20px;margin:0px 0px;background:url(../Images/bg8.jpg);color:black;background-size: cover;background-position: center;}
+        .aboutus h1{font-size: 1.4em;color:green; width:100%;text-align: center;text-decoration: underline;}
+  .chairman{grid-row:2/3;grid-column:3/5; min-height: 350px;background-color:white;color:black;padding:10px;border: 0px solid gray;font-family: 'Kalpurush', sans-serif;display: flex;justify-content: center;align-items: center;}
+        .chairman .subdiv{min-height: 350px;font-size: 1.4rem;margin-top: 0px;width:100%;background:url(../Images/bg8.jpg);color:black;background-size: cover;background-position: center;padding:10px;border-radius: 10px;font-family: 'Kalpurush', sans-serif;border:1px solid lightgray;}       
+        .chairman .subdiv p{text-align: justify;padding:0px;font-size:1.4rem;font-family: 'Kalpurush', sans-serif;color:maroon;line-height: 20px;margin:0px;background:transparent;color:black;background-size: cover;background-position: center}
+        .chairman .subdiv figure{margin-right: 5px;float:left;min-width: 125px;height:250px;padding:5px 5px;border:0px solid gray;width:20%;left:0px;background-color:whitesmoke;border-radius: 5px;text-align: center }
+        .chairman .subdiv figure img{min-width:100px; width:calc(100% - 12px);height:auto;font-family: 'Kalpurush', sans-serif;border-radius: 5px;border:2px solid #00cccc;margin-left: auto;margin-right: auto;image-orientation:  initial}
+       
+   .principal{grid-row: 3/4 ; grid-column: 1/3;min-height: 350px;background-color:white;color:black;padding:10px;border: 0px solid gray;font-family: 'Kalpurush', sans-serif;display: flex;justify-content: center;align-items: center;}
+        .principal .subdiv1{min-height: 350px;font-size: 1.4rem;margin:0px;width:100%;background:url(../Images/bg8.jpg);color:black;background-size: cover;background-position: center;padding:10px;border-radius: 10px;font-family: 'Kalpurush', sans-serif;border:1px solid lightgray;}       
+        .principal .subdiv1  p{text-align: justify;padding:0px;font-size:1.4rem;font-family: 'Kalpurush', sans-serif;color:maroon;line-height: 20px;margin:0px;background:transparent;color:black;background-size: cover;background-position: center;}
+        .principal .subdiv1  figure{margin-right: 5px;float:left;min-width: 125px;height:250px;padding:5px 5px;border:0px solid gray;width:20%;left:0px;background-color:whitesmoke;border-radius: 5px;text-align: center;}
+        .principal .subdiv1 figure img{min-width:100px; width:calc(100% - 12px);height:auto;font-family: 'Kalpurush', sans-serif;border-radius: 5px;border:2px solid #00cccc;margin-left: auto;margin-right: auto;image-orientation:  initial}        
+        figcaption{font-size: 1.2rem;color:maroon}
+  .notice{grid-row: 3/4 ; grid-column: 3/5;min-height: 350px;background-color:white;color:black;padding:10px;border: 0px solid gray;display: flex;justify-content: center;align-items: center; }
+  .notice iframe{min-height: 350px;font-size: 1.4rem;margin:0px;width:100%;color:black;background-size: cover;background-position: center;padding:10px;border-radius: 10px;font-family: 'Kalpurush', sans-serif;border:0px solid lightgray;}
+  .links{grid-row: 4/5 ; grid-column: 1/-1;background-color:tomato; }  
+  .footer{grid-row: 5/6 ; grid-column: 1/-1;background-color:tomato;} 
+  .copyrights{grid-row:6/7 ; grid-column: 1/-1;background-color:#003366;color:white;text-align: center;padding:10px;} 
+  .slider .slider_image{width:100%;height:100%;padding-top:30px;display: flex; justify-content: center;align-items: center;overflow: hidden;}
+  .slider .slider_image img{width:100%;height:calc(100% - 0px) ;overflow: hidden;}   
+      h2{font-size: 1.5em;font-family:  'Kalpurush', sans-serif;}
+      .dept{font-family:  'Kalpurush', sans-serif;font-size: 1em;padding:30px;}
+      #frm1{min-width:100%;}      
+.cover .displayname{text-align: center;text-transform:uppercase;width:90%;min-height:40px;height:auto;border:2px solid maroon; padding:5px 0px;background-color: white;border-radius: 10px;box-shadow: 5px 5px 5px gray;margin:10px;color:maroon;font-weight: 900;}
+.cover .moreproducts{width:100%;padding:3px; background-color: whitesmoke;color:#cc3300;font-size: 20px;font-family: cursive;text-align: center;margin-top: 5px;text-decoration: none;display:flex;align-items: center;justify-content: center; margin-bottom: 5px;}
+.moreproducts a{color:tomato;text-transform:uppercase;width:80%;height:auto;border:2px solid maroon;padding:10px 5px;background-color: whitesmoke;display: flex;align-items: center;justify-content: center;text-decoration: none;font-size: .7em;border-radius: 30px; background-color:#192156;animation:bk 1s linear 2s infinite alternate ;overflow:hidden;line-height: 20px;font-weight: 900;font-family: 'Poppins',serif;}
+.banner .logo1{background-color: whitesmoke;text-align: center;}
+.dept1{width:100%; background-color: whitesmoke;text-align: center;font-size:1.5em;font-weight: 900;}
+
+.frm2{width:100%;height:400px;}
+#preloader{background:#000 url(../Images/preloader1.gif) no-repeat center center;
+                width:100%;
+                height:100vh;
+                background-size: 20%;
+                position:fixed;
+                z-index: 100;}
+
+   @keyframes bk{
+    0%{
+        background:linear-gradiant(orange green yellow);
+        color:red;
+        
+    }
+    50%{
+        background:linear-gradiant(orange green yellow);
+        color:yellow;
+        
+    }
+    100%{
+         background:linear-gradiant(blue green blue);
+        color:white;
+    }
+}
+  @media screen and (max-width:980px)
+      {
+    .main{
+     display:grid;
+     grid-template-rows: auto auto auto auto auto auto auto ;
+     grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+     grid-row-gap: 3px;
+     grid-auto-rows: auto;
+     }   
+  .slider{grid-row:1/2;grid-column:1/-1;background-color:green;display: flex;justify-content: center;align-items: center;overflow: hidden; } 
+  .banner{grid-row:2/3;grid-column:1/-1;background-color:white;display:flex;justify-content: center;align-items: center;}
+  .aboutus{grid-row:3/4;grid-column:1/-1;margin:5px;}
+  .chairman{grid-row:4/5;grid-column:1/-1;display: block;margin:5px;}
+  .chairman .figure{display: block;}
+  .chairman figure img{min-width: 80px;height:auto;display: block;}  
+  .chairman figure figcaption{font-size: 1em;text-align: center;}
+  .principal{grid-row: 5/6 ; grid-column: 1/-1;background-color:white;display:flex;justify-content: center;align-items: center; }
+  .principal .subdiv{min-height: 500px;width:100%;box-shadow:none;border-bottom: 1px solid lightgrey;}
+  .notice{grid-row: 6/7 ; grid-column: 1/-1;padding:10px;background-color:whitesmoke;border:1px solid lightgray;width:100%;height:auto; }
+  .links{grid-row: 7/8 ; grid-column: 1/-1;background-color:tomato; } 
+  .footer{grid-row: 8/9 ; grid-column: 1/-1;background-color:tomato;}
+  .copyrights{grid-row: 9/10 ; grid-column: 1/-1;background-color:darkblue;color:white;text-align: center;}
+   .slider #slider_image{width:100%;height:200px;   }
+   .slider #slider_image img{width:100%;height:200px;}   
+      }
+
+ 

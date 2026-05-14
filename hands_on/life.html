@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lif</title>
+</head>
+<body>
+<nav>
+    <a href="#foot">Foot</a>
+</nav>
+    <h1>This is life , as defination of mine . My hearts wants her.</h1>
+   <div id="imgSelect">
+    <img id="myImage" src="2.jpg" alt="NoImage" style="width:200px; display:block; margin-bottom:10px;">
+    </div>
+
+
+    <div>
+    <h1 id="showMsg" style="color:white;">MSG</h1>
+    </div>
+
+
+    
+    <br>
+    <br>
+    <br>
+
+
+    <style>
+        
+        body{
+            background-color: black;
+        }
+        h1{
+        color: white;
+        
+        }
+        #nextI, #prevI{
+            color:black;
+            position:relative;
+            margin-inline: 10%;
+            height: 50px;
+            margin-bottom: 20px;
+            width: 200px;
+            background-color: pink;
+            
+
+        }
+        
+            
+        #imgSelect{
+            background-color: white;
+            height: 300px;
+
+            width: auto;
+            
+            font-size:large;
+            background-color: black;
+            
+        }
+    </style>
+<button id="nextI">Next Image</button>
+<button id="prevI">Previous Image</button>
+</div>
+
+<script>
+
+       let img = document.getElementById('myImage');
+       let msg = document.getElementById('showMsg');
+
+     let currentImg = 1; 
+
+    // NEXT BUTTON
+    nextI.addEventListener('click', function(){
+        if(currentImg == 1 || currentImg == 29){ // Check before adding
+            currentImg++;
+            img.src = currentImg + ".jpeg";
+            msg.innerHTML = "Good";
+        } 
+
+        else if(currentImg == 6 || currentImg == 30){
+            img.src = currentImg + ".png";
+            msg.innerHTML = "No Image more, Try Previous Image Button";
+        }
+        else if(currentImg == 36 || currentImg == 37){
+            img.src = currentImg + ".JPG";
+            msg.innerHTML = "No Image more, Try Previous Image Button";
+        }
+        else if(currentImg <= 37){
+
+            currentImg++;
+            img.src = currentImg + ".jpg";
+            msg.innerHTML = "Good";
+        }
+        else {
+            msg.innerHTML = "No Image more, Try Previous Image Button";
+        }
+        console.log("Current image is: " + currentImg);
+    });
+
+
+
+    // PREVIOUS BUTTON
+    prevI.addEventListener('click', function(){
+        if(currentImg > 1){ // Check before subtracting
+            currentImg--;
+            img.src = currentImg + ".jpg";
+            msg.innerHTML = "Good";
+        } else {
+            msg.innerHTML = "No Image more, Try Next Image Button";
+        }
+        console.log("Current image is: " + currentImg);
+    });
+</script>
+<h1>Love you from<span background-color: red>Begening</span></h1>
+<p>This is me</p>
+<p>&c copy</p>
+<h1 id="foot">Foot</h1>
+
+</body>
+</html>

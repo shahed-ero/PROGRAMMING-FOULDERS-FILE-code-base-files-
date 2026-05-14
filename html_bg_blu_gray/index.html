@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="styles.css" />
+<h1>Event Listener examples</h1>
+<button id="btn">Change background color</button>
+<script src="index.js"></script>
+<style>
+    body{
+        background-color:gray;
+        }
+button {
+  background: linear-gradient(135deg, #4da3ff, #007bff);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+}
+
+button:hover {
+  background: linear-gradient(135deg, #66b3ff, #3399ff);
+  box-shadow: 0 6px 14px rgba(0, 123, 255, 0.3);
+  transform: translateY(-2px);
+}
+</style>
+<script>
+const bodyEl = document.querySelector("body");
+const btn = document.getElementById("btn");
+
+let isBgColorGrey = true;
+
+function toggleBgColor() {
+  bodyEl.style.backgroundColor = isBgColorGrey ? "blue" : "grey";
+  isBgColorGrey = !isBgColorGrey;
+}
+
+btn.addEventListener("click", toggleBgColor);
+</script>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter_Web</title>
+</head>
+<body>
+    <h2>Counter</h2>
+    <p id="count">0</p>
+    <button onclick="increaseCount()">+</button>
+    <button onclick="decreaseCount()">-</button>
+    <button onclick="resetCount()">RESET</button>
+    <button onclick="saveCount()">SAVE</button>
+    <button onclick="loadCount()">LOAD</button>
+
+<script>
+//Creating script for updating count to the p id count 
+ let count = 0;
+    function updateCount(){
+        document.getElementById("count").innerHTML = count;
+    }
+
+//Adding Increase Counter Function
+
+function increaseCount() {
+    count ++;
+    updateCount();
+}
+
+//Creating a script for Decease Counter Function
+function decreaseCount() {
+    count --;
+    updateCount();
+}
+
+//Creating a script for Reset Counter Function
+
+function resetCount() {
+    count = 0;
+    updateCount();
+}
+//Createing a Save Counter Function
+
+function saveCount() {
+    localStorage.setItem("count", count);
+}
+
+//Createing a load counter Function to display the saved
+
+function loadCount() {
+    let saved = localStorage.getItem("count");
+    if(saved !== null) {
+        count = Number(saved);
+    }
+    updateCount();
+}
+
+</script>
+
+</body>
+</html>
+
+
+/*
+function saveCount() {
+    localStorage.setItem("count", count);
+}
